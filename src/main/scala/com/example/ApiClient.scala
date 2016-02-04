@@ -4,6 +4,9 @@ object ApiClient {
   def main(args: Array[String]): Unit = {
 
     val firstArg = args.toList.headOption
+
+    println("Started with parameter: " + firstArg)
+
     firstArg match {
       case Some("categories") => Cats.categories
       case Some("fact") => Cats.facts
