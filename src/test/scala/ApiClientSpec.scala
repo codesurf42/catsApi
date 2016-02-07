@@ -30,6 +30,6 @@ class ApiClientSpec extends FlatSpec with Matchers {
   }
   "Fact" should "parse JSON content" in {
     val factsJson = """{"facts": ["Tylenol and chocolate are both poisionous to cats."], "success": "true"}"""
-    Fact.
+    // Fact.
   }
 }

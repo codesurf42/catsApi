@@ -18,14 +18,15 @@ object ApiClient {
   }
 }
 
-case class Category(id: Int, name: String)
-
 trait Links {
   def getContentFromUrl(url: String):String = io.Source.fromURL(url).mkString
 }
 
 abstract class Cats(val contentUrl: String) {
   val logger = Logger(LoggerFactory.getLogger("Cats"))
+
+  type CatFact = String
+  case class Category(id: Int, name: String)
 }
 
 object Categories extends Cats(contentUrl = "http://thecatapi.com/api/categories/list") with Links {
@@ -71,7 +72,9 @@ object Fact extends Cats("http://catfacts-api.appspot.com/api/facts?number=1") w
     */
   def run = ???
 
-  def parseJson() = ???
+  def parseJson(jsonString:String):CatFact = {
+    ???
+  }
 
 }
 object CatImage {
