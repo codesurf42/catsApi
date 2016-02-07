@@ -28,4 +28,8 @@ class ApiClientSpec extends FlatSpec with Matchers {
     Categories.parseXml(catsXml).map(_.name).toSet shouldBe Set("hats", "space")
     assert(Categories.parseXml(catsXml).head.id >= 1)
   }
+  "Fact" should "parse JSON content" in {
+    val factsJson = """{"facts": ["Tylenol and chocolate are both poisionous to cats."], "success": "true"}"""
+    Fact.
+  }
 }

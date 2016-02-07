@@ -20,11 +20,16 @@ object ApiClient {
 
 case class Category(id: Int, name: String)
 
-object Categories {
+trait Links {
+  def getContentFromUrl(url: String):String = io.Source.fromURL(url).mkString
+}
 
+abstract class Cats(val contentUrl: String) {
   val logger = Logger(LoggerFactory.getLogger("Cats"))
+}
 
-  val contentUrl = "http://thecatapi.com/api/categories/list"
+object Categories extends Cats(contentUrl = "http://thecatapi.com/api/categories/list") with Links {
+
   /**
     * Print to stdout an ordered list with the different categories of cats
     *
@@ -38,8 +43,6 @@ object Categories {
     val items = parseXml(xml)
     showItems(items)
   }
-
-  def getContentFromUrl(url: String):String = io.Source.fromURL(url).mkString
 
   import scala.xml._
   def parseXml(s:String):Iterable[Category] = {
@@ -60,7 +63,7 @@ object Categories {
   }
 }
 
-object Fact {
+object Fact extends Cats("http://catfacts-api.appspot.com/api/facts?number=1") with Links {
   /**
     * Print to stdout a cat fact
     *
@@ -68,7 +71,7 @@ object Fact {
     */
   def run = ???
 
-  // http://catfacts-api.appspot.com/api/facts?number=1
+  def parseJson() = ???
 
 }
 object CatImage {
