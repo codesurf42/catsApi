@@ -18,3 +18,7 @@ e.g. to get different categories of cats, use:
     ./activator "run categories"
 
 
+## Todo
+
+- handle URL errors (bad/no connection/etc)
+- more generic approach?
