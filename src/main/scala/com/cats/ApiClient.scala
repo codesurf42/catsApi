@@ -42,7 +42,6 @@ abstract class Cats(val contentUrl: String) {
   def run():Unit
 
   type CatFact = String
-  type Url = String
   case class Category(id: Int, name: String)
 }
 
@@ -108,6 +107,7 @@ object CatImage extends Cats(contentUrl = "http://thecatapi.com/api/images/get?f
   override def run() = {
     val contentXml = getContentFromUrl(contentUrl)
 
+    // the only problem with such nice-looking for-comprehensions are their not-so-nice-debuggable behaviour
     for {
       uri <- parse(contentXml)
       _ = logger.debug("Image URL: " + uri)
