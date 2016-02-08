@@ -20,6 +20,7 @@ e.g. to get different categories of cats, use:
 
 ## Todo
 
+```
 - handle URL errors (bad/no connection/etc)
 -/+ handle parsing errors / more functional errors-resilient approach
 - more generic approach?
@@ -27,3 +28,5 @@ e.g. to get different categories of cats, use:
 -/+ typed URL/URIs
 - we may like to go more async...
 - perhaps refactor to more files
+```
+
