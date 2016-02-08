@@ -21,4 +21,7 @@ e.g. to get different categories of cats, use:
 ## Todo
 
 - handle URL errors (bad/no connection/etc)
+-/+ handle parsing errors / more functional errors-resilient approach
 - more generic approach?
++ fix logging
+-/+ typed URL/URIs
