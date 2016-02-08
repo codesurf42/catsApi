@@ -6,7 +6,7 @@ public-available APIs.
 
 To run it, you may need JDK on your path. Please refer to
 https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html#CJAGAACB
-or the documentation of your system.
+or to the documentation of your system.
 
 You may use sbt build tool or activator (which is an extended version of sbt, included) 
 to run this Scala app.
@@ -25,3 +25,5 @@ e.g. to get different categories of cats, use:
 - more generic approach?
 + fix logging
 -/+ typed URL/URIs
+- we may like to go more async...
+- perhaps refactor to more files
