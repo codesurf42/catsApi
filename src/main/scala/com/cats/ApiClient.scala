@@ -3,8 +3,7 @@ package com.cats
 import java.net.URI
 import java.nio.file.{Files, Paths}
 
-import com.typesafe.scalalogging.Logger
-import org.slf4j.LoggerFactory
+import com.typesafe.scalalogging.LazyLogging
 import play.api.libs.json._
 
 import scala.xml._
@@ -36,8 +35,7 @@ trait Links {
   }
 }
 
-abstract class Cats(val contentUrl: String) {
-  val logger = Logger(LoggerFactory.getLogger("Cats"))
+abstract class Cats(val contentUrl: String) extends LazyLogging {
 
   def run():Unit
 
