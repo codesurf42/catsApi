@@ -1,4 +1,4 @@
-name := """nutmeg_api_client"""
+name := """catsApi"""
 
 version := "1.0"
 
